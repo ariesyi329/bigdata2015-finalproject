@@ -25,14 +25,14 @@ def dataInit():
     df_alltaxi = pd.merge(df_fares, df_trips, how='inner', on=['medallion','hack_license','vendor_id','pickup_datetime'])
     return df_alltaxi
 
-def findNeighborhood(location, index, neighborhoods):
-    match = index.intersection((location[0], location[1], location[0], location[1]))
+def findNeighborhood(location, index_rtree, neighborhoods):
+    match = index_rtree.intersection((location[0], location[1], location[0], location[1]))
     for a in match:
         if any(map(lambda x: x.contains_point(location), neighborhoods[a][1])):
             return a
     return -1
 
-def readNeighborhood(shapeFilename, index, neighborhoods):
+def readNeighborhood(shapeFilename, index_rtree, neighborhoods):
     sf = shapefile.Reader(shapeFilename)
     for sr in sf.shapeRecords():
         if sr.record[0].strip() not in ['New York', 'Staten Island', 'Queens', 'Bronx','Brooklyn']:
@@ -40,21 +40,15 @@ def readNeighborhood(shapeFilename, index, neighborhoods):
         paths = map(Path, numpy.split(sr.shape.points, sr.shape.parts[1:]))
         bbox = paths[0].get_extents()
         map(bbox.update_from_path, paths[1:])
-        index.insert(len(neighborhoods), list(bbox.get_points()[0])+list(bbox.get_points()[1]))
+        index_rtree.insert(len(neighborhoods), list(bbox.get_points()[0])+list(bbox.get_points()[1]))
         neighborhoods.append((sr.record[3], paths))
     neighborhoods.append(('UNKNOWN', None)) 
 
 
-def geocode(longitude,latitude):
+def geocode(longitude,latitude,index_rtree,neighborhoods):
     if not latitude or not longitude:
         print("Error reading longitude/latitude")
         return -1
-
-    index = rtree.Index()
-    neighborhoods = []
-    agg = {}
-
-    readNeighborhood('zip_codes_shp/PostalBoundary.shp', index, neighborhoods)
 
     #convert to projected
     inProj = Proj(init='epsg:4326')
@@ -62,7 +56,7 @@ def geocode(longitude,latitude):
     outx,outy = transform(inProj,outProj,longitude,latitude)
     pickup_location = (outx,outy)
 
-    resultMap = findNeighborhood(pickup_location, index, neighborhoods)
+    resultMap = findNeighborhood(pickup_location, index_rtree, neighborhoods)
     if resultMap!=-1:
         zipcode_result = neighborhoods[resultMap][0]
         return zipcode_result
@@ -74,10 +68,17 @@ def geocode(longitude,latitude):
 def main():
 
     df = dataInit()
+    index_rtree = rtree.Index()
+    neighborhoods = []
+    agg = {}
+    readNeighborhood('zip_codes_shp/PostalBoundary.shp', index_rtree, neighborhoods)
 
+    counter = 0
     for index, row in df.iterrows():
-        df.loc[index,'zipcode_pickup'] = geocode(row['pickup_longitude'], row['pickup_latitude'])
-        df.loc[index,'zipcode_dropoff'] = geocode(row['dropoff_longitude'], row['dropoff_latitude'])
+        counter += 1
+        if counter == 6 : break
+        df.loc[index,'zipcode_pickup'] = geocode(row['pickup_longitude'], row['pickup_latitude'],index_rtree,neighborhoods)
+        df.loc[index,'zipcode_dropoff'] = geocode(row['dropoff_longitude'], row['dropoff_latitude'],index_rtree,neighborhoods)
 
     df.to_csv('out.csv')
             
