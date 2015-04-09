@@ -48,7 +48,7 @@ def readNeighborhood(shapeFilename, index, neighborhoods):
 def geocode(longitude,latitude):
     if not latitude or not longitude:
         print("Error reading longitude/latitude")
-        sys.exit()
+        return -1
 
     index = rtree.Index()
     neighborhoods = []
