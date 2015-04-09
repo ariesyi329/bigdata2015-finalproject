@@ -68,15 +68,13 @@ def geocode(longitude,latitude,index_rtree,neighborhoods):
 def main():
 
     df = dataInit()
+
     index_rtree = rtree.Index()
     neighborhoods = []
     agg = {}
     readNeighborhood('zip_codes_shp/PostalBoundary.shp', index_rtree, neighborhoods)
 
-    counter = 0
     for index, row in df.iterrows():
-        counter += 1
-        if counter == 6 : break
         df.loc[index,'zipcode_pickup'] = geocode(row['pickup_longitude'], row['pickup_latitude'],index_rtree,neighborhoods)
         df.loc[index,'zipcode_dropoff'] = geocode(row['dropoff_longitude'], row['dropoff_latitude'],index_rtree,neighborhoods)
 
