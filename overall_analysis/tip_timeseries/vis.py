@@ -20,8 +20,8 @@ for line in sys.stdin:
 
 plt.plot(time_list,tip_list,
         color = "skyblue",linewidth=1.5)
-plt.title("Tip Percentage VS. Time")
-plt.xlabel("Time")
+plt.title("Tip Percentage VS. Pickup Time")
+plt.xlabel("Pickup Time")
 plt.ylabel("Tip Percentage")
 plt.xlim(0,23)
 plt.grid()
