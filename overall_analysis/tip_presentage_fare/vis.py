@@ -20,8 +20,16 @@ for line in sys.stdin:
 
 #tip_dict = dict(sorted(tip_dict.iteritems()))
 
-print tip_dict.keys(), tip_dict.values()
+#print tip_dict.keys(), tip_dict.values()
 
-plt.plot(tip_dict.keys(),tip_dict.values())
-plt.savefig('tips_perc2.png')
+plt.plot(tip_dict.keys(),tip_dict.values(),
+        color = "skyblue", linewidth=1.5)
+#plt.grid(b=True, which = 'major', color='grey', linestyle='--')
+#plt.grid(b=True, which = 'minor', color='grey', linestyle='--')
+plt.grid(True, which='both')
+#plt.minorticks_on()
+plt.title("Tip Percentage VS. Fares Amounts")
+plt.xlabel("Fares Amounts")
+plt.ylabel("Tip Percentage")
+plt.savefig('../results/tips_perc.png')
 
