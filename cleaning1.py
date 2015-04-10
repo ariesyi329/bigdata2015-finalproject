@@ -16,12 +16,11 @@ from datetime import date,datetime
 from rtree import index as rtree
 import shapefile  
 from pyproj import Proj, transform
+import argparse
 
-def dataInit():
-    filename_fares = 'input/fares_sunday.csv'
-    filename_trips = 'input/trips_sunday.csv'
-    df_fares = pd.read_csv(filename_fares)
-    df_trips = pd.read_csv(filename_trips)
+def dataInit(trips_filename,fares_filename):
+    df_fares = pd.read_csv(fares_filename)
+    df_trips = pd.read_csv(trips_filename)
     df_alltaxi = pd.merge(df_fares, df_trips, how='inner', on=['medallion','hack_license','vendor_id','pickup_datetime'])
     return df_alltaxi
 
@@ -65,9 +64,9 @@ def geocode(longitude,latitude,index_rtree,neighborhoods):
         return -1
 
 
-def main():
+def main(trips_filename,fares_filename,out_filename):
 
-    df = dataInit()
+    df = dataInit(trips_filename,fares_filename)
 
     index_rtree = rtree.Index()
     neighborhoods = []
@@ -78,7 +77,19 @@ def main():
         df.loc[index,'zipcode_pickup'] = geocode(row['pickup_longitude'], row['pickup_latitude'],index_rtree,neighborhoods)
         df.loc[index,'zipcode_dropoff'] = geocode(row['dropoff_longitude'], row['dropoff_latitude'],index_rtree,neighborhoods)
 
-    df.to_csv('out.csv')
+    df.to_csv(out_filename)
             
 if __name__ == '__main__':
-    main()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("trip_files", help="enter trips csv filename / directory")
+    parser.add_argument("fares_file", help="enter fares csv filename / directory")
+    parser.add_argument("out_file", help="enter output csv filename / directory")
+
+    args = parser.parse_args()
+    trips_filename = args.trip_files
+    fares_filename = args.fares_file
+    out_filename = args.out_file
+
+    main(trips_filename,fares_filename,out_filename)
+    
