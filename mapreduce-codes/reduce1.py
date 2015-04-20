@@ -18,7 +18,7 @@ def parseInput():
 def reducer():
     agg = {}
     for key,values in parseInput():
-        print '%s\t%s' % (key,values)
+        print '%s,%s' % (key,values)
 
 if __name__=='__main__':
     reducer()

@@ -8,13 +8,14 @@
 ##
 ###############################################################################
 
+
 import csv,sys,os
+os.environ['MPLCONFIGDIR'] = '/tmp'
 import numpy
 from matplotlib.path import Path
 from rtree import index as rtree
 import shapefile  
 from pyproj import Proj, transform
-
 
 def findNeighborhood(location, index_rtree, neighborhoods):
     match = index_rtree.intersection((location[0], location[1], location[0], location[1]))
@@ -66,25 +67,35 @@ def main():
     index_rtree = rtree.Index()
     neighborhoods = []
     agg = {}
-    readNeighborhood('../zip_codes_shp/PostalBoundary.shp', index_rtree, neighborhoods)
+    readNeighborhood('PostalBoundary.shp', index_rtree, neighborhoods)
 
     for values in parseInput():
-        #general trips attributes 
-        medallion = values[0]      
-        pickup_datetime = values[5]
-        dropoff_datetime = values[6]
-        passenger_count = values[7]
-        trip_time_in_secs = values[8]
-        trip_distance = values[9]
+    
+        try:
+            #general trips attributes 
+            pickup_datetime = values[0]
+            dropoff_datetime = values[1]
+            trip_time_in_secs = values[2]
+            trip_distance = values[3]
+            pickup_longitude = values[4]
+            pickup_latitude = values[5]
+            dropoff_longitude = values[6]
+            dropoff_latitude = values[7]
+            fare_amount = values[8]
+            tip_amount = values[9]
         
-        #attributes for geocoding       
-        pickup_location = (float(values[10]), float(values[11]))
-        dropoff_location = (float(values[12]), float(values[13]))
-        pickup_zipcode = geocode(pickup_location[0], pickup_location[1],index_rtree,neighborhoods)
-        dropoff_zipcode = geocode(dropoff_location[0], dropoff_location[1],index_rtree,neighborhoods)
-        if (pickup_zipcode!=-1) and (dropoff_zipcode!=-1):
-            print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,' % (medallion,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,\
-                                                    trip_distance,pickup_location,pickup_zipcode,dropoff_zipcode)
+            #attributes for geocoding       
+            pickup_location = (float(pickup_longitude), float(pickup_latitude))
+            dropoff_location = (float(dropoff_longitude), float(dropoff_latitude))
+            pickup_zipcode = geocode(pickup_location[0], pickup_location[1],index_rtree,neighborhoods)
+            dropoff_zipcode = geocode(dropoff_location[0], dropoff_location[1],index_rtree,neighborhoods)
+            if (pickup_zipcode!=-1) and (dropoff_zipcode!=-1):
+                print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,%s' % (pickup_datetime,dropoff_datetime,trip_time_in_secs,trip_distance,\
+                                                          pickup_longitude, pickup_longitude,dropoff_longitude, dropoff_longitude,\
+                                                          pickup_zipcode,dropoff_zipcode)
+        except:
+            pass
+
 
 if __name__ == '__main__':
     main()
