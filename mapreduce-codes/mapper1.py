@@ -83,6 +83,7 @@ def main():
             dropoff_latitude = values[7]
             fare_amount = values[8]
             tip_amount = values[9]
+            tip_percentage = ((float(tip_amount)/float(fare_amount))*100)
         
             #attributes for geocoding       
             pickup_location = (float(pickup_longitude), float(pickup_latitude))
@@ -90,9 +91,8 @@ def main():
             pickup_zipcode = geocode(pickup_location[0], pickup_location[1],index_rtree,neighborhoods)
             dropoff_zipcode = geocode(dropoff_location[0], dropoff_location[1],index_rtree,neighborhoods)
             if (pickup_zipcode!=-1) and (dropoff_zipcode!=-1):
-                print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,%s' % (pickup_datetime,dropoff_datetime,trip_time_in_secs,trip_distance,\
-                                                          pickup_longitude, pickup_longitude,dropoff_longitude, dropoff_longitude,\
-                                                          pickup_zipcode,dropoff_zipcode)
+                print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,%s' % (pickup_zipcode+'^'+dropoff_zipcode,pickup_datetime,dropoff_datetime,trip_time_in_secs,trip_distance,\
+                                                          fare_amount, tip_amount, tip_percentage, pickup_zipcode,dropoff_zipcode)
         except:
             pass
 
