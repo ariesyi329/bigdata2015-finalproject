@@ -8,11 +8,11 @@
 -------------------------------------------------------------------------------
 
 -- load the data
-fares = LOAD 'final-project/join-test/input/fares_wednesday.csv' 
+fares = LOAD 'final-project/input-1-month/trip_fare_12.csv' 
 USING PigStorage(',') 
 AS (medallion,hack_license,vendor_id,pickup_datetime,payment_type,fare_amount,surcharge,mta_tax,tip_amount,tolls_amount,total_amount);
 
-trips = LOAD 'final-project/join-test/input/trips_wednesday.csv' 
+trips = LOAD 'final-project/input-1-month/trip_data_12.csv' 
 USING PigStorage(',') 
 AS (medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude);
 
@@ -33,4 +33,4 @@ GENERATE trips::pickup_datetime,trips::dropoff_datetime,trips::trip_time_in_secs
 ;
 
 -- store the data
-STORE min_alltable INTO 'final-project/join-test/output/outJOIN2' USING PigStorage (',');
+STORE min_alltable INTO 'final-project/join-test/output/out-1-month' USING PigStorage (',');
