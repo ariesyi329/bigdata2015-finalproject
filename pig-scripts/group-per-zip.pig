@@ -17,27 +17,13 @@ AS (id:chararray,pickup_datetime:chararray,dropoff_datetime:chararray, passenger
 in2 = FOREACH (GROUP in1 BY pickup_zipcode)
       GENERATE
              (INT) AVG(in1.pickup_zipcode) AS pickup_zipcode,
-             (INT) AVG(in1.dropoff_zipcode) AS dropoff_zipcode,
-             AVG(in1.passenger_count) AS passenger_count,
-             AVG(in1.trip_time_in_secs) AS trip_time_in_secs,
-             AVG(in1.trip_distance) AS trip_distance,
-             AVG(in1.fare_amount) AS fare_amount,
-             AVG(in1.tip_amount) AS tip_amount,
-             AVG(in1.total_amount) AS total_amount,
              AVG(in1.tip_percentage) AS tip_percentage,
              COUNT(in1.tip_percentage) AS num_trips;
 
 -- group by pickup_zipcode^dropoff_zipcode (id)
 in3 = FOREACH (GROUP in1 BY dropoff_zipcode)
       GENERATE
-             (INT) AVG(in1.pickup_zipcode) AS pickup_zipcode,
              (INT) AVG(in1.dropoff_zipcode) AS dropoff_zipcode,
-             AVG(in1.passenger_count) AS passenger_count,
-             AVG(in1.trip_time_in_secs) AS trip_time_in_secs,
-             AVG(in1.trip_distance) AS trip_distance,
-             AVG(in1.fare_amount) AS fare_amount,
-             AVG(in1.tip_amount) AS tip_amount,
-             AVG(in1.total_amount) AS total_amount,
              AVG(in1.tip_percentage) AS tip_percentage,
              COUNT(in1.tip_percentage) AS num_trips;
 
