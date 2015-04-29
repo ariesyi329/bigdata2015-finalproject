@@ -1,0 +1,402 @@
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_m_000001_0 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_m_000000_0 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_m_000000_1 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_0 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_0 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_1 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_1 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_2 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_2 Info:Container killed by the ApplicationMaster.
+Container killed on request. Exit code is 143
+
+Backend error message
+---------------------
+AttemptID:attempt_1426197789776_0597_r_000000_3 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+Pig Stack Trace
+---------------
+ERROR 2997: Unable to recreate exception from backed error: AttemptID:attempt_1426197789776_0597_r_000000_3 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+org.apache.pig.impl.logicalLayer.FrontendException: ERROR 1066: Unable to open iterator for alias min_alltable. Backend error : org.apache.pig.backend.executionengine.ExecException: ERROR 2997: Unable to recreate exception from backed error: AttemptID:attempt_1426197789776_0597_r_000000_3 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+	at org.apache.pig.PigServer.openIterator(PigServer.java:902)
+	at org.apache.pig.tools.grunt.GruntParser.processDump(GruntParser.java:752)
+	at org.apache.pig.tools.pigscript.parser.PigScriptParser.parse(PigScriptParser.java:372)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:228)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:203)
+	at org.apache.pig.tools.grunt.Grunt.run(Grunt.java:66)
+	at org.apache.pig.Main.run(Main.java:542)
+	at org.apache.pig.Main.main(Main.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:212)
+Caused by: org.apache.pig.backend.executionengine.ExecException: ERROR 0: org.apache.pig.backend.executionengine.ExecException: ERROR 2997: Unable to recreate exception from backed error: AttemptID:attempt_1426197789776_0597_r_000000_3 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher.getStats(MapReduceLauncher.java:819)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher.launchPig(MapReduceLauncher.java:456)
+	at org.apache.pig.backend.hadoop.executionengine.HExecutionEngine.launchPig(HExecutionEngine.java:277)
+	at org.apache.pig.PigServer.launchPlan(PigServer.java:1367)
+	at org.apache.pig.PigServer.executeCompiledLogicalPlan(PigServer.java:1352)
+	at org.apache.pig.PigServer.storeEx(PigServer.java:1011)
+	at org.apache.pig.PigServer.store(PigServer.java:974)
+	at org.apache.pig.PigServer.openIterator(PigServer.java:887)
+	... 12 more
+Caused by: org.apache.pig.backend.executionengine.ExecException: ERROR 2997: Unable to recreate exception from backed error: AttemptID:attempt_1426197789776_0597_r_000000_3 Info:Error: org.apache.pig.backend.executionengine.ExecException: ERROR 0: Error executing function
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:120)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNext(POUserFunc.java:345)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.expressionOperators.POUserFunc.getNextString(POUserFunc.java:445)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.PhysicalOperator.getNext(PhysicalOperator.java:316)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.processPlan(POForEach.java:378)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POForEach.getNextTuple(POForEach.java:298)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.runPipeline(PigGenericMapReduce.java:463)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.processOnePackageOutput(PigGenericMapReduce.java:431)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:403)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.PigGenericMapReduce$Reduce.reduce(PigGenericMapReduce.java:255)
+	at org.apache.hadoop.mapreduce.Reducer.run(Reducer.java:171)
+	at org.apache.hadoop.mapred.ReduceTask.runNewReducer(ReduceTask.java:645)
+	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:405)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:162)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1491)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:157)
+Caused by: Traceback (most recent call last):
+  File "udf.py", line 64, in findzip
+ImportError: No module named numpy
+
+	at org.python.core.Py.ImportError(Py.java:304)
+	at org.python.core.imp.import_first(imp.java:755)
+	at org.python.core.imp.import_module_level(imp.java:837)
+	at org.python.core.imp.importName(imp.java:917)
+	at org.python.core.ImportFunction.__call__(__builtin__.java:1220)
+	at org.python.core.PyObject.__call__(PyObject.java:357)
+	at org.python.core.__builtin__.__import__(__builtin__.java:1173)
+	at org.python.core.imp.importOne(imp.java:936)
+	at org.python.pycode._pyx3.findzip$6(udf.py:75)
+	at org.python.pycode._pyx3.call_function(udf.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:165)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:301)
+	at org.python.core.PyFunction.function___call__(PyFunction.java:376)
+	at org.python.core.PyFunction.__call__(PyFunction.java:371)
+	at org.python.core.PyFunction.__call__(PyFunction.java:361)
+	at org.python.core.PyFunction.__call__(PyFunction.java:356)
+	at org.apache.pig.scripting.jython.JythonFunction.exec(JythonFunction.java:117)
+	... 17 more
+
+	at org.apache.pig.backend.hadoop.executionengine.Launcher.getErrorMessages(Launcher.java:215)
+	at org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher.getStats(MapReduceLauncher.java:810)
+	... 19 more
+================================================================================
