@@ -28,8 +28,18 @@ min_alltable= FOREACH
            (trips::dropoff_latitude IS NOT NULL) AND 
            (fares::payment_type == 'CRD'))
 )
-GENERATE trips::pickup_datetime,trips::dropoff_datetime,trips::trip_time_in_secs, trips::trip_distance, trips::pickup_longitude, trips::pickup_latitude, trips::dropoff_longitude, trips::dropoff_latitude,
-         fares::fare_amount, fares::tip_amount
+GENERATE 	trips::pickup_datetime,
+	 	trips::dropoff_datetime,
+	 	trips::passenger_count,
+		trips::trip_time_in_secs, 
+		trips::trip_distance, 
+		trips::pickup_longitude, 
+		trips::pickup_latitude, 
+		trips::dropoff_longitude, 
+		trips::dropoff_latitude,
+         	fares::fare_amount, 
+		fares::tip_amount,
+		fares::total_amount
 ;
 
 -- store the data

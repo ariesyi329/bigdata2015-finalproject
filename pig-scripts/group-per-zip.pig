@@ -14,7 +14,8 @@ AS (id:chararray,pickup_datetime:chararray,dropoff_datetime:chararray, passenger
     tip_amount:float, total_amount:float, tip_percentage:float, pickup_zipcode:int, dropoff_zipcode:int);
 
 -- group by pickup_zipcode^dropoff_zipcode (id)
-in2 = FOREACH (GROUP in1 BY id)
+in2 = FOREACH (GROUP in1 BY pickup_zipcode)
+-- in2 = FOREACH (GROUP in1 BY dropoff_zipcode)
       GENERATE
              (INT) AVG(in1.pickup_zipcode) AS pickup_zipcode,
              (INT) AVG(in1.dropoff_zipcode) AS dropoff_zipcode,

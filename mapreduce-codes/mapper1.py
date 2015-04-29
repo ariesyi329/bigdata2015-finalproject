@@ -72,17 +72,19 @@ def main():
     for values in parseInput():
     
         try:
-            #general trips attributes 
+            #general trips attributes
             pickup_datetime = values[0]
             dropoff_datetime = values[1]
-            trip_time_in_secs = values[2]
-            trip_distance = values[3]
-            pickup_longitude = values[4]
-            pickup_latitude = values[5]
-            dropoff_longitude = values[6]
-            dropoff_latitude = values[7]
-            fare_amount = values[8]
-            tip_amount = values[9]
+            passenger_count = values[2]
+            trip_time_in_secs = values[3]
+            trip_distance = values[4]
+            pickup_longitude = values[5]
+            pickup_latitude = values[6]
+            dropoff_longitude = values[7]
+            dropoff_latitude = values[8]
+            fare_amount = values[9]
+            tip_amount = values[10]
+            total_amount = values[11]
             tip_percentage = ((float(tip_amount)/float(fare_amount))*100)
         
             #attributes for geocoding       
@@ -91,8 +93,8 @@ def main():
             pickup_zipcode = geocode(pickup_location[0], pickup_location[1],index_rtree,neighborhoods)
             dropoff_zipcode = geocode(dropoff_location[0], dropoff_location[1],index_rtree,neighborhoods)
             if (pickup_zipcode!=-1) and (dropoff_zipcode!=-1):
-                print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,%s' % (pickup_zipcode+'^'+dropoff_zipcode,pickup_datetime,dropoff_datetime,trip_time_in_secs,trip_distance,\
-                                                          fare_amount, tip_amount, tip_percentage, pickup_zipcode,dropoff_zipcode)
+                print '%s\t%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s' % (pickup_zipcode+'^'+dropoff_zipcode,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,\
+                                                                fare_amount, tip_amount, total_amount, tip_percentage, pickup_zipcode,dropoff_zipcode)
         except:
             pass
 
