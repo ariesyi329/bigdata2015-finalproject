@@ -1,0 +1,4 @@
+s3://final-project-big-data/input/fare2013/
+s3://final-project-big-data/input/trip013/
+
+-D mapred.reduce.tasks=1 -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py,s3://final-project-big-data/codes/PostalBoundary.shp,s3://final-project-big-data/codes/PostalBoundary.prj,s3://final-project-big-data/codes/PostalBoundary.shp.xml,s3://final-project-big-data/codes/PostalBoundary.shx,s3://final-project-big-data/codes/PostalBoundary.dbf -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py -mapper mapper1.py -reducer reduce1.py -input s3://final-project-big-data/output/pig1-join-output/ -output s3://final-project-big-data/output/mr1-rtree-output -mapper mapper1.py -reducer reduce1.py
