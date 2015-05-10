@@ -1,0 +1,1 @@
+cat data_tip_perc_vs_fare | python vis.py
