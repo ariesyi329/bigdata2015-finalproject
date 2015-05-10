@@ -1,0 +1,28 @@
+Understanding people's tipping behavior based on the Census data.
+
+1) Quadratic relation between average tip percentage and median household income
+   those most rich people didn't tip more.
+
+2) Quadratic relation between average tip percentage and public transportation rate
+   those people who rarely taking public transportation to work tend to tip more.
+
+3) Linear relation between average tip percentage and white rate
+   average tip percentage is 16% in those area with rare white people; but higher to 20% where most people are white.
+
+Clustering of NYC area using Census data.
+
+1) Three clusters:
+   Cluster 0: Uptown manhattan, Bronx and part of Brooklyn (near Queens)
+   Cluster 1: Downtown and Midtown manhattan, part of Brooklyn (near downtown manhattan)
+   Cluster 2: Staten island, uptown manhattan and part of Brooklyn (near Staten island)
+
+2) Taxi services and tipping behavior in three clusters:
+   Taxi services:
+   Cluster 0: 1000 trips per hour on average; Most dense taxi time is midnight and early morning at weekends.
+   Cluster 1: 10000 trips per hour on average; Most dense taxi time is midnight at weekends, 8-9am and 9-8pm at workdays.
+   Cluster 2: 4 trips per hour on average; Most dense taxi time is midnight at weekends, 7-8am at workdays.
+   Tipping behavior:
+   Generally, people in Cluster 2, rarely taking taxi though, tip more on average;
+   People in Cluster 1 show the most stable tipping behavior, almost all of them tip roughly at 20%;
+   People in Cluster 0 tip very differently, from 12% to 21%
+
