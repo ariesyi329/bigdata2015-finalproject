@@ -7,12 +7,12 @@ def main():
     c0 = pickle.loads(open('cluster0dist','r').read())
     c0=c0.drop(['weekend','workday'],1)
     c0.columns = ['weekend','workday']
-    c0.plot(kind='area',color=['orange','deepskyblue'],alpha=0.6, figsize=(16,6), stacked=False)
+    c0.plot(kind='area',color=['orange','deepskyblue'],alpha=0.6, figsize=(18,6), stacked=False)
     plt.xticks(rotation=0)
     plt.xlabel('Pickup Time')
     plt.ylabel('Daily Trip Amount')
-    plt.show()
-    #plt.savefig('cluster0trip.png',dpi=200)
+    #plt.show()
+    plt.savefig('cluster0trip-black.png',dpi=200)
 
 if __name__ == "__main__":
     main()

@@ -59,8 +59,8 @@ def plot(df, columns_name):
 def main(df,name):
     for i in ['cluster0', 'cluster1', 'cluster2']:
         plot(df, i)
-        #plt.show()
-        plt.savefig(name+"_"+i+".png", dpi=200)
+        plt.show()
+        #plt.savefig(name+"_"+i+".png", dpi=200)
         plt.close()
 
 if __name__ == "__main__":
