@@ -17,6 +17,8 @@ Running Map Reduce Jobs for this project:
         * Cluster Auto-terminate: No
 
 2. Specify the input to thw 2013 fares and trips data. For example:
+
+
         * Input 1: s3://final-project-big-data/input/fare2013/
         * Input 2: s3://final-project-big-data/input/trip013/
         * Arguments: -D mapred.reduce.tasks=1 -files
