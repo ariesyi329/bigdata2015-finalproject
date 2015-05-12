@@ -7,6 +7,8 @@ Pig join code:
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
+
+
         * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/join-only.pig
 
 Rtree spatial index code:
@@ -48,6 +50,8 @@ Pig groupby codes:
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
+
+
         * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/group-only.pig
 
 
@@ -56,6 +60,8 @@ Pig groupby 2 codes:
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
+
+
         * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/group-per-zip.pig
 
 **All the links above are made available for public, so you can test that with the link given above.
