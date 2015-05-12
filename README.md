@@ -5,6 +5,12 @@ Sample scripts to analyze taxi data on Amazon AWS
 Running Map Reduce Jobs for this project:
 ======
 
+Pig join code:
+======
+
+Rtree spatial index code:
+======
+
 1. Create an Amazon EMR cluster with the following configuration (the bootstrap action is very important -- please pay attention to that):
 
         * Termination protection: Yes
@@ -36,6 +42,10 @@ Running Map Reduce Jobs for this project:
 You can use aws s3 ls or cp to see the product.
 
 **All the links above are made available for public, so you can test that with the link given above.
+
+Pig groupby codes:
+======
+
 
 Contributors
 ============
