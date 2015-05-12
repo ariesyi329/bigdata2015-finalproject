@@ -1,1 +1,34 @@
 # bigdata2015-finalproject
+
+Sample scripts to analyze taxi data on Amazon AWS
+
+Running Map Reduce Jobs for this project:
+======
+
+1. Create an Amazon EMR cluster with the following configuration (the bootstrap action is very important -- please pay attention to that):
+
+        * Termination protection: Yes
+        * Logging: Enabled (remember to input your S3 bucket to store log file)
+        * Hadoop distribution: Amazon AMI 3.3.1 (it has to be using this AMI Version
+        * Bootstrap action: This is a very important step because the sample scripts 
+        make use of python rtree library, but Amazon AMI 3.3.1 does not have rtree installed.
+        Click 'Add bootstrap action' -> Custom action -> Configure and add -> 
+        Put the following in 'S3 location': s3://dimas-rtree-test-zipcode/rtree.sh
+        * Cluster Auto-terminate: No
+
+2. Specify the input to thw 2013 fares and trips data. For example:
+
+        * Input 1: s3://final-project-big-data/input/fare2013/
+        * Input 2: s3://final-project-big-data/input/trip013/
+        * Arguments: -D mapred.reduce.tasks=1 -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py,s3://final-project-big-data/codes/PostalBoundary.shp,s3://final-project-big-data/codes/PostalBoundary.prj,s3://final-project-big-data/codes/PostalBoundary.shp.xml,s3://final-project-big-data/codes/PostalBoundary.shx,s3://final-project-big-data/codes/PostalBoundary.dbf -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py -files s3://final-project-big-data/codes/mapper1.py,s3://final-project-big-data/codes/reduce1.py -mapper mapper1.py -reducer reduce1.py -input s3://final-project-big-data/output/pig1-join-output/ -output s3://final-project-big-data/output/mr1-rtree-output -mapper mapper1.py -reducer reduce1.py
+
+**All the links above are made available for public, so you can test that with the link given above.
+ 
+3. All the output is located under s3://final-project-big-data/output 
+You can use aws s3 ls or cp to see the product.
+
+Contributors
+============
+Pan Ding
+Yi Liu
+Pan Ding
