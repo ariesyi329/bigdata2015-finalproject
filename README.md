@@ -2,11 +2,12 @@
 
 Sample scripts to analyze taxi data on Amazon AWS
 
-Running Map Reduce Jobs for this project:
-======
-
 Pig join code:
 ======
+
+1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
+2. Use this arguments
+        * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/join-only.pig
 
 Rtree spatial index code:
 ======
@@ -41,10 +42,23 @@ Rtree spatial index code:
 3. All the output is located under s3://final-project-big-data/output 
 You can use aws s3 ls or cp to see the product.
 
-**All the links above are made available for public, so you can test that with the link given above.
 
 Pig groupby codes:
 ======
+
+1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
+2. Use this arguments
+        * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/group-only.pig
+
+
+Pig groupby 2 codes:
+======
+
+1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
+2. Use this arguments
+        * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/group-per-zip.pig
+
+**All the links above are made available for public, so you can test that with the link given above.
 
 
 Contributors
