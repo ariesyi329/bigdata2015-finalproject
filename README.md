@@ -1,6 +1,10 @@
-# bigdata2015-finalproject
+# bigdata2015-finalproject MapReduce code
 
-Sample scripts to analyze taxi data on Amazon AWS
+NOTE: This repository contains Hadoop MapReduce codes and other data analytics scripts required for Big Data final projects.
+
+# Sample scripts to analyze taxi data on Amazon AWS.
+
+Codes are stored separately in mapreduce-codes and pig-scripts folder, but in order to make the codes easier to be reproduced, please see the guidance below to use codes and data that are already stored on S3 bucket.
 
 Pig join code:
 ======
