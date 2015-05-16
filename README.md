@@ -6,8 +6,7 @@ NOTE: This repository contains Hadoop MapReduce codes and other data analytics s
 
 Codes are stored separately in mapreduce-codes and pig-scripts folder, but in order to make the codes easier to be reproduced, please see the guidance below to use codes and data that are already stored on S3 bucket.
 
-Pig join code:
-======
+## Pig join code:
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
@@ -15,8 +14,7 @@ Pig join code:
 
         * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/join-only.pig
 
-Rtree spatial index code:
-======
+## Rtree spatial index code:
 
 1. Create an Amazon EMR cluster with the following configuration (the bootstrap action is very important -- please pay attention to that):
 
@@ -49,8 +47,8 @@ Rtree spatial index code:
 You can use aws s3 ls or cp to see the product.
 
 
-Pig groupby codes:
-======
+## Pig groupby codes:
+
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
@@ -59,8 +57,7 @@ Pig groupby codes:
         * s3://us-west-2.elasticmapreduce/libs/pig/pig-script --run-pig-script --pig-versions 0.12.0 --args -f s3://final-project-big-data/codes/group-only.pig
 
 
-Pig groupby 2 codes:
-======
+## Pig groupby 2 codes:
 
 1. Pick pig 0.12 instead of hadoop streaming before starting the cluster.
 2. Use this arguments
